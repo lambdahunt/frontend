@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+import { store } from './store';
 import { ThemeProvider } from '@material-ui/styles';
 
-import rootReducer from './reducers';
 import App from './App';
 
 // VARIABLES FOR THEMING AND GLOBAL STYLES
@@ -20,8 +17,6 @@ const theme = {
   primaryFontStack: primaryFonts,
   secondaryFontStack: secondaryFonts,
 };
-
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>
