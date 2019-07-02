@@ -4,44 +4,30 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { ThemeProvider } from '@material-ui/styles';
 
 import rootReducer from './reducers';
 import App from './App';
 
 // VARIABLES FOR THEMING AND GLOBAL STYLES
-const mainFontStack = `sans-serif`;
-const appBackgroundColor = '#fafafa';
+const primaryFonts = `'Roboto', sans-serif`;
+const secondaryFonts = `'Roboto Mono', monospace`;
+const appBackgroundColor = '#efefef';
 
-const GlobalStyle = createGlobalStyle`
-  ${reset}
-
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    *, *:before, *:after {
-      box-sizing: inherit;
-      transition: inherit;
-    }
-  }
-
-  body {
-    background: ${appBackgroundColor};
-    font: 100% ${mainFontStack};
-  }
-  
-  /* other global styles go here */
-`;
+const theme = {
+  buttonColor: '#2C98F0',
+  paperColor: '#ffffff',
+  primaryFontStack: primaryFonts,
+  secondaryFontStack: secondaryFonts,
+};
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>
-    <GlobalStyle />
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </Provider>,
   document.getElementById('root'),
 );
