@@ -16,9 +16,7 @@ function App() {
   return (
     <>
       <h1>APP CONTENT GOES HERE</h1>
-      <Router>
-        {/* <Route exact path='/login' component={LoginPage} /> */}
-      </Router>
+      <Router>{/* <Route exact path='/login' component={LoginPage} /> */}</Router>
     </>
   );
 }
