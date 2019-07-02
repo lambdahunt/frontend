@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-// import LoginPage from './views/LoginPage';
+import LoginPage from './views/LoginPage';
 
 library.add(
   faCircleNotch,
@@ -15,8 +15,9 @@ library.add(
 function App() {
   return (
     <>
-      <h1>APP CONTENT GOES HERE</h1>
-      <Router>{/* <Route exact path='/login' component={LoginPage} /> */}</Router>
+      <Router>
+        <Route exact path='/login' component={LoginPage} />
+      </Router>
     </>
   );
 }

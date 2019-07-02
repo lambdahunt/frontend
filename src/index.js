@@ -36,6 +36,10 @@ const theme = {
   backgroundColor: '#efefef',
   primaryFontStack: `'Roboto', sans-serif`,
   secondaryFontStack: `'Roboto Mono', monospace`,
+  radius: `0.4rem`,
+  flatShadow: `none`,
+  mainShadow: `0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)`,
+  raisedShadow: `0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)`,
 };
 
 ReactDOM.render(
