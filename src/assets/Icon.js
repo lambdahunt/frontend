@@ -4,6 +4,7 @@ import LambdaArrow from './LambdaArrow';
 import LambdaLogoHorizontal from './LambdaLogoHorizontal';
 import LambdaNextUp from './LambdaNextUp';
 import LambdaNextUpFull from './LambdaNextUpFull';
+import LambdaNextUpFlat from './LambdaNextUpFlat';
 
 const Icon = props => {
   switch (props.name) {
@@ -14,7 +15,9 @@ const Icon = props => {
     case 'nextUp':
       return <LambdaNextUp {...props} />;
     case 'nextUpFull':
-      return <LambdaNextUpFull {...props} />
+      return <LambdaNextUpFull {...props} />;
+    case 'nextUpFlat':
+      return <LambdaNextUpFlat {...props} />;
     default:
       return;
   }
