@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const theme = {
+  primaryColor: '#BB1333',
   buttonColor: '#2C98F0',
   paperColor: '#ffffff',
   backgroundColor: '#efefef',
