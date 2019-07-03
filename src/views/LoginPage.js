@@ -1,4 +1,3 @@
-// Login Page
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -166,8 +165,7 @@ const LoginButton = styled.button`
 const LambdaArrow = styled.span`
   svg {
     display: inline-block;
-    fill: white;
-    transition: transform 0.5s ease;
+    fill: #757575;
     
     ${LoginButton}:hover & {
       transform: rotate(-90deg);

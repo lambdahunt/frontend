@@ -1,1 +1,1 @@
-// component import/export goes here
+export { default as Jumbotron } from "./Jumbotron";
