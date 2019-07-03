@@ -19,16 +19,16 @@ const Team = styled.section`
     width: 100%;
     max-width: 900px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-      ".    .    .     .     .    .    .   "
-      "text text text  .     .    jeff .   "
-      "text text text  .     .    .    .   "
-      "text text text  .     eric .    ruby"
-      ".    .    .     .     .    .    .   "
-      ".    .    shaun .     .    tay  .   "
-      ".    .    .     .     .    .    .   ";
+      ".    .    .     .     .    .   "
+      "text text text  .     jeff .   "
+      "text text text  .     .    .   "
+      "text text text  eric  .    ruby"
+      ".    .    .     .     .    .   "
+      ".    .    shaun .     tay  .   "
+      ".    .    .     .     .    .   ";
 
     .text {
       grid-area: text;
@@ -55,6 +55,7 @@ const Team = styled.section`
         height: 100px;
         width: 100px;
         border-radius: 50px;
+        border: 2px solid white;
         background-size: cover;
       }
       h2 {
