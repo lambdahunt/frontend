@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Icon from '../assets/Icon';
+import { Link } from 'react-router-dom';
 
 const LandingNav = styled.nav`
   position: absolute;
@@ -32,13 +33,14 @@ const LandingNav = styled.nav`
         line-height: 18px;
         margin-right: 3rem;
       }
-      button {
+      a {
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
         border: 1px solid ${props => props.theme.paperColor};
         background-color: rgba(255, 255, 255, 0);
         text-transform: uppercase;
+        text-decoration: none;
         color: ${props => props.theme.paperColor};
         border-radius: ${props => props.theme.radius};
         padding: 1rem 2rem;
@@ -58,7 +60,7 @@ const LandingNav_ = (props) => {
         <Icon name='nextUpFull' fill='#FAFAFA' />
         <section className='actions'>
           <p>why lambda?</p>
-          <button>sign in</button>
+          <Link to='/login'>sign in</Link>
         </section>
       </div>
     </LandingNav>
