@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Icon from "../assets/Icon";
-import { Jumbotron, LandingNav, WhyLambda, Team } from '../components';
+import { Jumbotron, LandingNav, WhyLambda, Team, Footer } from '../components';
 
 const LandingPage = styled.div`
   position: relative;
@@ -20,6 +20,7 @@ class LandingPage_ extends React.Component {
         <Jumbotron />
         <WhyLambda />
         <Team />
+        <Footer />
       </LandingPage>
     );
   }
