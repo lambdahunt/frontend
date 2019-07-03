@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Router>
-        <Route exact path='/login' component={LoginPage} />
+        <Route exact path='/' component={LoginPage} />
       </Router>
     </>
   );

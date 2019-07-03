@@ -6,9 +6,7 @@ import { Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../store/actions';
 import brandingBackground from '../assets/BrandingBackground.mp4';
-import lambdaNextUp from '../assets/lambdaNextUp.svg';
-import lambdaLogo from '../assets/lambdaLogoHoriz.svg';
-import lambdaArrow from '../assets/lambdaArrow.svg';
+import Icon from "../assets/Icon";
 
 const LoginPage = styled.div`
   align-items: center;
@@ -70,12 +68,14 @@ const BrandingContainer = styled.div`
     z-index: 1;
 
     .spacer {
-      height: 94px;
+      height: 4.7rem;
     }
-    .branding {
+    .nextUp {
+      margin: 0 auto;
+    }
+    .logoH {
       border-top: 1px solid white;
-      display: inline-box;
-      margin: 0 auto 1rem;
+      margin: 0 auto 2rem;
       padding-top: 1rem;
     }
   }
@@ -92,6 +92,7 @@ const LoginFormContainer = styled.div`
 
   form {
     color: #757575;
+
     h1 {
       font-weight: 300;
       font-size: 36px;
@@ -107,42 +108,70 @@ const LoginFormContainer = styled.div`
       width: 100%;
       padding: 2rem 0 1rem;
       border-bottom: 1px solid #757575;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+      &:hover {
+        color: #2196f3;
+      }
       &:focus {
         color: #2196f3;
-        border-color: #2196f3;
+        border-bottom: 1px solid #2196f3; 
       }
     }
   }
   section {
     display: flex;
     justify-content: space-between;
-    // margin-bottom: 2rem;
+    align-items: center;
 
-    a {
+    .forgot-password {
+      display: inline-block;
       font-weight: normal;
       font-size: 14px;
       line-height: 19px;
       text-decoration: none;
       color: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+
+      &:hover {
+        color: ${props => props.theme.buttonColor};
+      }
     }
-    button {
-      border: none;
-      color: #757575;
-      background-color: #e0e0e0;
-      display: flex;
-      flex-flow: row nowrap;
-      p {
-        display: inline-block;
-        font-size: 1.6rem;
-      }
-      img {
-        color: #757575;
-        display: inline-block;
-        height: 1.6rem;
-        width: 1.6rem;
-      }
+  }
+`;
+const LoginButton = styled.button`
+  border: none;
+  border-radius: ${props => props.theme.radius};
+  color: #757575;
+  background-color: #e0e0e0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  
+  &:hover {
+    background-color: ${props => props.theme.buttonColor};
+    color: ${props => props.theme.paperColor};
+  }
+  p {
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    margin-right: 1rem;
+    font-weight: 500;
+    text-transform: uppercase
+  }
+`;
+const LambdaArrow = styled.span`
+  svg {
+    display: inline-block;
+    fill: white;
+    transition: transform 0.5s ease;
+    
+    ${LoginButton}:hover & {
+      transform: rotate(-90deg);
+      fill: ${props => props.theme.paperColor};
     }
   }
 `;
@@ -189,8 +218,8 @@ class LoginPage_ extends React.Component {
             </div>
             <div className='overlay'>
               <div className='spacer' />
-              <img src={lambdaNextUp} alt='lambda next-up logo' />
-              <img src={lambdaLogo} alt='lambda branding' className='branding' />
+              <Icon className='nextUp' name='nextUp' fill='#ffffff' />
+              <Icon className='logoH' name='logoH' fill='#ffffff' />
             </div>
           </BrandingContainer>
           <LoginFormContainer>
@@ -214,18 +243,18 @@ class LoginPage_ extends React.Component {
               />
             </form>
             <section>
-              <a href='#'>Forgot Password?</a>
+              <p className='forgot-password'>Forgot Password?</p>
               {this.props.pending ? (
                 <button>
-                  <div classname='.contentContainer'>
+                  <div>
                     <FontAwesomeIcon icon={['fas', 'circle-notch']} spin />
                   </div>
                 </button>
               ) : (
-                <button onClick={this.handleSubmit}>
+                <LoginButton onClick={this.handleSubmit}>
                   <p>Login</p>
-                  <img src={lambdaArrow} alt='lambda arrow' />
-                </button>
+                  <LambdaArrow><Icon name='arrow' /></LambdaArrow>
+                </LoginButton>
               )}
             </section>
           </LoginFormContainer>
