@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: #efefef;
     font: 100% 'Roboto', sans-serif;
+    color: rgba(0, 0, 0, 0.87);
   }
   
   /* other global styles go here */
@@ -36,11 +37,12 @@ const theme = {
   paperColor: '#ffffff',
   backgroundColor: '#efefef',
   primaryFontStack: `'Roboto', sans-serif`,
+  primaryFontColor: 'rgba(0, 0, 0, 0.87)',
   secondaryFontStack: `'Roboto Mono', monospace`,
   radius: `0.4rem`,
   flatShadow: `none`,
-  mainShadow: `0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)`,
-  raisedShadow: `0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)`,
+  mainShadow: `0px 0px 4px rgba(0, 0, 0, 0.12)`,
+  raisedShadow: `0px 0px 4px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.25);`,
 };
 
 ReactDOM.render(

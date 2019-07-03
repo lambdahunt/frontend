@@ -20,10 +20,11 @@ const Jumbotron = styled.section`
     align-items: center;
   }
   .context {
-    max-width: 400px;
-    margin-left: 15%; 
+    width: 900px;
+    margin: 0 auto;
     h1 {
       color: ${props => props.theme.primaryColor};
+      max-width: 400px
       font-weight: 900;
       font-size: 36px;
       line-height: 46px;
@@ -50,6 +51,10 @@ const Jumbotron = styled.section`
       line-height: 18px;
       padding: 1rem 2rem;
       text-transform: uppercase;
+
+      &:hover {
+        background-color: #88032c;
+      }
     }
   }
 `;
