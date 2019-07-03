@@ -4,12 +4,13 @@ import Icon from '../assets/Icon';
 import { Link } from 'react-router-dom';
 
 const LandingNav = styled.nav`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: ${props => props.theme.primaryColor};
   z-index: 1;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.16);
 
   svg {
     margin: 1rem 0;

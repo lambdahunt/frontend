@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-// import { Redirect } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Icon from "../assets/Icon";
-import { Jumbotron, LandingNav } from '../components';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Icon from "../assets/Icon";
+import { Jumbotron, LandingNav, WhyLambda, Team } from '../components';
 
 const LandingPage = styled.div`
   position: relative;
@@ -17,10 +15,12 @@ class LandingPage_ extends React.Component {
   }
   render() {
     return (
-      <>
+      <LandingPage>
         <LandingNav />
         <Jumbotron />
-      </>
+        <WhyLambda />
+        <Team />
+      </LandingPage>
     );
   }
 }
